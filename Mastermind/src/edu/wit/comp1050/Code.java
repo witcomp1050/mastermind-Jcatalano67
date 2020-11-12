@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class Code{
-    public static Object [] makeCode(Object[] p) {
+    public static Object[] makeCode(Object[] p) {
         ArrayList<Character> colorList = new ArrayList<Character>();
         colorList.add(0,'G');
         colorList.add(1,'B');
@@ -20,13 +20,11 @@ public class Code{
     public int scoreGuess() {
         return 0;
     }
-    public char getSolution() {
-        return 0;
-    }
-    public static void main(String[] args) {
+    public void getSolution() {
         Object[] peg = new Object[4];
         Object [] pegCode = makeCode(peg);
         System.out.println(Arrays.toString(pegCode));
+    }
 
     }
-}
+
