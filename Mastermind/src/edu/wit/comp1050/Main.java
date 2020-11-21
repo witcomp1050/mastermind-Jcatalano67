@@ -5,26 +5,23 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-public class Main extends Code {
+public class Main extends Code implements Guess{
+    private ArrayList<String> _solution = getSolution();
+    private ArrayList<String> _guess = Guess.guessGet();
+
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        // user input will soon be click to fill peg
-        System.out.println("Please input guess");
-        String guess = input.next();
-        String[] guessSubs = guess.split(" ");
-        //takes input, puts it into List then array of objects to compare with solution
-        List<String> guessList = Arrays.asList(guessSubs);
-        guessList.toArray();
-
-        String firstGuess = guessList.toString();
-        System.out.println(firstGuess);
         Main game = new Main();
-        game.getSolution();
-
+        game.printAnswers();
     }
-    public static int scoreGuess(String[] guess) {
+    public static int scoreGuess() {
+        int score = 0;
+
         return 0;
 
     }
 
+    public void printAnswers(){
+        System.out.println(Guess.guessGet());
+        System.out.println(getSolution());
+    }
 }

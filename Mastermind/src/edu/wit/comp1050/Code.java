@@ -3,27 +3,26 @@ import java.io.*;
 import java.util.*;
 
 public class Code{
-    public static String makeCode(String[] p) {
+    public static ArrayList<String> makeCode(ArrayList<String> p) {
         // int for random element removal
-        ArrayList<Character> colorList = new ArrayList<Character>();
-        colorList.add(0,'G');
-        colorList.add(1,'B');
-        colorList.add(2,'Y');
-        colorList.add(3,'R');
-        colorList.add(4,'O');
-        colorList.add(5,'P');
+        ArrayList<String> colorList = new ArrayList<>();
+        colorList.add(0,"G");
+        colorList.add(1,"B");
+        colorList.add(2,"Y");
+        colorList.add(3,"R");
+        colorList.add(4,"O");
+        colorList.add(5,"P");
        int rand = (int) ((Math.random()* colorList.size()));
        colorList.remove(rand);
        colorList.remove(rand);
-        String solutionToString = colorList.toString();
-        return solutionToString;
+        return colorList;
 
         }
 
-    public void getSolution() {
-        String [] peg = new String[4];
-        String pegCode = makeCode(peg);
-        System.out.println(pegCode);
+    public ArrayList<String> getSolution() {
+        ArrayList<String> peg = new ArrayList<>(4);
+        ArrayList<String> pegCode = makeCode(peg);
+        return pegCode;
     }
 
     }
