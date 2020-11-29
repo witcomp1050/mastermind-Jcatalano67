@@ -1,28 +1,46 @@
 package edu.wit.comp1050;
 import java.io.*;
 import java.util.*;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class Code{
-    public static ArrayList<String> makeCode(ArrayList<String> p) {
+    public static int[] makeCode(Integer[] c) {
         // int for random element removal
-        ArrayList<String> colorList = new ArrayList<>();
-        colorList.add(0,"G");
-        colorList.add(1,"B");
-        colorList.add(2,"Y");
-        colorList.add(3,"R");
-        colorList.add(4,"O");
-        colorList.add(5,"P");
-       int rand = (int) ((Math.random()* colorList.size()));
-       colorList.remove(rand);
-       colorList.remove(rand);
-        return colorList;
+        Set<Integer>codeSet = new LinkedHashSet<Integer>();
+        Random rand = new Random();
 
+        while (codeSet.size() < 4) {
+            codeSet.add(rand.nextInt(6));
+        }
+        return convertCode(codeSet);
+        }
+        public static int[] DupsCode(Integer[] c) {
+        Set<Integer> codeSet2 = new HashSet<>();
+        Random rand2 = new Random();
+            while(codeSet2.size() < 4) {
+                codeSet2.add(rand2.nextInt(6));
+            }
+            return convertCode(codeSet2);
         }
 
-    public ArrayList<String> getSolution() {
-        ArrayList<String> peg = new ArrayList<>(4);
-        ArrayList<String> pegCode = makeCode(peg);
+    /**
+     * converts the LinkedHashSet to primative int to be used for guess comparison
+     * @param
+     * @return
+     */
+    public static  int[] convertCode (Set<Integer> c){
+          return ArrayUtils.toPrimitive(c.toArray(new Integer[4]));
+        }
+
+    public static int[] getSolution() {
+        Integer[] peg = new Integer[4];
+        int[] pegCode = makeCode(peg);
         return pegCode;
+    }
+    public static void getSolution2() {
+        Integer[] peg2 = new Integer[4];
+        int[] pegCode2 = DupsCode(peg2);
+        System.out.println(pegCode2);
     }
 
     }
