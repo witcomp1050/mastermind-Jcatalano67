@@ -12,6 +12,13 @@ public class GuessScore {
     public GuessScore(){
 
     }
+
+    /**
+     *  takes the int[] solution and the int[] guess from user to compare answers and give score
+     * @param code
+     * @param guess
+     * @return score
+     */
     public int[] scoreGuess(int[] code, int[] guess) {
         int[] tempCode = new int[4];
         int[] tempGuess = new int[4];

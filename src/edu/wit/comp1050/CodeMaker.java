@@ -17,9 +17,9 @@ public class CodeMaker {
     }
 
 /**
- * converts the LinkedHashSet to primative int to be used for guess comparison
- * @param
- * @return
+ * converts Type Integer to int
+ * @param tempPegSet
+ * @return void
  */
       void convertCode (Set<Integer> tempPegSet){
 
